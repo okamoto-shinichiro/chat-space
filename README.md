@@ -22,25 +22,24 @@ Things you may want to cover:
 |nickname|integer|null: false|
 
 ### Association
-- has_many :message
-- has_many :groups_user
-- has_many through :group
+- has_many :messages
+- has_many :groups_users
+- has_many through :groups
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|body|text|null: false|
-|image|string|null: false|
+|body|text|
+|image|string|
 |group_id|integer|null: false,foreign_key: true|
 |user_id|integer|null: false,foreign_key: true|
 |timestamps|integer|null: false|
 
 ### Association
-- belongs_to :user
-- belongs_to :group
-- belongs_to :groups_user
+- belongs_to :users
+- belongs_to :groups
 
 ## groupsテーブル
 
@@ -50,9 +49,9 @@ Things you may want to cover:
 |group_name|text|null: false|
 
 ### Association
-- has_many :message
-- has_many :groups_user
-- has_many through :user
+- has_many :messages
+- has_many :groups_users
+- has_many through :users
 
 
 ## groups_usersテーブル
@@ -63,9 +62,9 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
-- has_many :message
+- belongs_to :groups
+- belongs_to :users
+
 * Database initialization
 
 * How to run the test suite
