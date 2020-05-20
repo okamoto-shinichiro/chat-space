@@ -24,7 +24,7 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :groups_users
-- has_many through :groups
+- has_many :groups, through: :groups_users
 
 ## messagesテーブル
 
@@ -38,20 +38,20 @@ Things you may want to cover:
 |timestamps|integer|null: false|
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|group_name|text|null: false|
+|name|text|null: false|
 
 ### Association
 - has_many :messages
 - has_many :groups_users
-- has_many through :users
+- has_many :users, through: :groups_users
 
 
 ## groups_usersテーブル
@@ -62,8 +62,8 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 * Database initialization
 
