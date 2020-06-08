@@ -1,0 +1,116 @@
+.wrapper{
+  display: flex;
+}
+  .chat{
+    width: calc(100vw - 300px);
+    height: 100px;
+    background-color: #ffffff;
+    .main-header{
+      box-sizing: border-box;
+      width: calc(100vw - 300px);
+      height: 100px;
+      padding: 0 40px;  
+      .left-header{
+        float: left;
+        &__title{
+          font-size: 20px;
+          color: #333333;
+          margin-top: 35px;
+          margin-bottom: 15px;
+        }
+        &__members{
+          font-size: 12px;
+          color: #999999;  
+          display: flex;
+          .member{
+            display: inline-block;
+          }
+        }
+      }
+      .right-header{
+        border: 1px solid $light_blue;
+        color: $light_blue;
+        float: right;
+        padding: 0 20px;
+        margin-top: 28px;
+        font-size: 16px;
+        height: 40px; 
+        display: flex;
+        align-items: center;
+        &__button a{
+          text-decoration: none; 
+        }
+      }
+    }
+    .messages{
+      width: calc(100vw - 300px);
+      height: calc(100vh - 100px - 90px);
+      background-color: #fafafa;
+      .message{
+        padding: 0 0 0 40px;
+        .upper-message{
+          padding-top: 35px;
+          display: flex;
+          &__user-name{
+            font-size: 16px;
+            color: #333333;
+            font-weight: bold;
+          }
+          &__date{
+            font-size: 12px;
+            color: #999999;
+            padding-left: 10px;
+          }
+        }
+        .lower-message{
+          padding-top: 12px;
+          padding-bottom: 46px;
+          &__content{
+            font-size: 14px;
+            color: #434A54;
+          }
+        }
+      }
+    }
+    .form{
+      width: calc(100vw - 300px);
+      height: 90px;
+      background-color: #d2d2d2;
+      padding: 20px 40px;
+      display: flex;
+      .new-message{
+        display: flex;
+        position: relative;
+        width: calc(100vw - 535px);
+        background-color: $white;
+        .message_content.input-box__text{
+          position: absolute;
+          left: 10px;
+          top: 12px;
+          color: gray;
+        }
+        .icon.input-box{
+          position: absolute;
+          right: 4px;
+          top: 7px;
+          font-size: 24px;
+          color: black;
+          .hidden{
+            display: none;
+          }
+        }
+      }
+      .form__submit{
+        background-color: $light_blue;
+        color: $white;
+        font-size: 16px;
+        margin: 0 0 0 15px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .submit__bottom{
+        }
+      }
+    }
+  }
