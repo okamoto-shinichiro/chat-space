@@ -1,0 +1,46 @@
+.chat
+  .main-header
+    .left-header  
+      .left-header__title
+        test
+      .left-header__members
+        Member:
+        .member
+          masa
+        .member
+          メンバー名
+    .right-header
+      .right-header__button
+        = link_to "#" do
+          Edit
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+          masa
+        .upper-message__date
+          2020/06/04
+      .lower-message
+        .lower-message__content
+          おはよう！
+    .message
+      .upper-message
+        .upper-message__user-name
+          masa
+        .upper-message__date
+          2020/06/04
+      .lower-message
+        .lower-message__content
+          今日は夜から雨
+
+  .form
+    .new-message
+      .message_content.input-box__text
+        type a message
+      %label.icon.input-box
+        = icon('fa','image',class: 'icon.input-box')
+        %input.hidden{type: "file"}
+
+    .form__submit{type: 'submit', value: 'Send'}
+      .submit__bottom
+        Send
