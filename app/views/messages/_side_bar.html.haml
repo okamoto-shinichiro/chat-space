@@ -5,20 +5,17 @@
         = current_user.name
       .header__box__lists
         .icon-edit        
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fa', 'edit', class: 'icon-edit')
         .icon-cog
           = link_to edit_user_path(current_user) do
             = icon('fa', 'cog', class: 'icon-cog')
   .groups
-    .group
-      .group__name
-      techcamp
-      .group__message
-      まだメッセージがありません
-    .group
-      .group__name
-      グループ名
-      .group__message
-      新着メッセージ  
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
     
