@@ -34,13 +34,10 @@
           今日は夜から雨
 
   .form
-    .new-message
-      .message_content.input-box__text
-        type a message
-      %label.icon.input-box
-        = icon('fa','image',class: 'icon.input-box')
-        %input.hidden{type: "file"}
-
-    .form__submit{type: 'submit', value: 'Send'}
-      .submit__bottom
-        Send
+    = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'new-message', placeholder: 'type a message'
+        .message_content.input-box__text
+          = f.label :image, class: 'message_content.input-box__text__image' do
+            = icon('fa', 'image', class: 'icon.input-box')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'submit__bottom'
